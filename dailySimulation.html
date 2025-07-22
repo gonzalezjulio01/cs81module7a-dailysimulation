@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Daily Schedule Simulation</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; padding-top: 60px; background-color: #eef;">
+
+  <h1>My Simulated Day</h1>
+  <div id="output" style="margin-top: 40px; font-size: 1.5rem;"></div>
+
+  <script>
+    const output = document.getElementById("output");
+
+    // Helper function that waits, then shows an activity on the screen
+    function showActivity(text, delay) {
+      setTimeout(() => {
+        const p = document.createElement("p");
+        p.textContent = text;
+        output.appendChild(p);
+      }, delay);
+    }
+
+    // My daily routine starts here
+    showActivity("⏰ 7:00 AM – Wake up and scroll phone for a bit", 1000);
+    showActivity("🥣 8:00 AM – Eat cereal while watching YouTube", 3000);
+    showActivity("🚶‍♂️ 9:30 AM – Take a quick morning walk outside", 5000);
+    showActivity("🍜 12:00 PM – Lunch break, instant noodles style", 7000);
+    showActivity("🎮 3:00 PM – Gaming session to relax", 9000);
+    showActivity("📺 5:00 PM – Watch a few episodes of a show", 11000);
+
+    // Surprise twist! Something random happens at the end of the day
+    const surprises = [
+      "😴 Unexpected nap attack at 6:30 PM",
+      "🔥 Power outage while relaxing!",
+      "🎉 Got invited to a random party!",
+      "🍕 Surprise pizza delivery!",
+      "🐸 Saw a frog on the way home?"
+    ];
+
+    // Pick a random surprise to keep it interesting
+    const randomIndex = Math.floor(Math.random() * surprises.length);
+    showActivity(`🤔 Surprise: ${surprises[randomIndex]}`, 13000);
+
+    // Wrap up the day
+    showActivity("✅ 10:00 PM – Day ends. Not too bad after all.", 15000);
+  </script>
+
+</body>
+</html>
